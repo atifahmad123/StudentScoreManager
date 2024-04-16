@@ -3,51 +3,64 @@
 using namespace std;
 
 
-class StudentScore{
+class FastFoods{
 	
 	private:
-		int score;
-		int bonus;
+		int Pizza;
+		int ZingerBurger;
+		int Lazzaniya;
 		
 	public:
-		StudentScore(){
-			score = 0;
-			bonus = 0;
+		FatsFoods(){
+			Pizza = 0;
+			ZingerBurger = 0;
+			Lazzaniya = 0;
 		}
 		
-		void setScore(){
-			cin>>score;
+		void setPizza(){
+			cin>>Pizza;
 		}
-		void setBonus(){
-			cin>>bonus;
+		void setLazzaniya(){
+			cin>>Lazzaniya;
 		}
-		
+		void setZingerBurger(){
+			cin>>ZingerBurger;
+		}
+				
 		void operator ++(){
-			score += 5;
+			ZingerBurger += 5;
+		}
+		void operator +(){
+			Lazzaniya += 3;
 		}
 		void operator -(){
-			bonus = -bonus;
+			Pizza = -Pizza;
 		}
 
 		void getInfo(){
-			cout<<"\nStudent's score is: "<<score;
-			cout<<"\nStudent's bonus is: "<<bonus;
+			cout<<"\nTotal Pizzas are: "<<Pizza;
+			cout<<"\nTotal burgers are: "<<ZingerBurger;
+			cout<<"\nTotal Lazzaniyas are: "<<Lazzaniya;
 		}
 };
 
 
 int main(){
-	StudentScore std;
-	cout<<"Kindly enter student's score."<<endl;
-	std.setScore();
+	FastFoods obj;
+	cout<<"Kindly enter number of Pizzas."<<endl;
+	obj.setPizza();
 	
-	cout<<"Kindly enter student's bonus."<<endl;
-	std.setBonus();
+	cout<<"Kindly enter number of Burgers."<<endl;
+	obj.setZingerBurger();
+
+	cout<<"Kindly enter number of Lazzaniyas."<<endl;
+	obj.setLazzaniya();
 	
-	++std;
-	-std;
+	++obj;
+	+obj;
+	-obj;
 	
-	std.getInfo();
+	obj.getInfo();
 
 	
 }
